@@ -13,7 +13,6 @@ require('dotenv').config();
 
 // connexion à la base de données mongodb
 mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.znzps.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`,
-//mongoose.connect('mongodb+srv://user44:44_2022@cluster0.znzps.mongodb.net/piquante?retryWrites=true&w=majority',
 
 { useNewUrlParser: true,
     useUnifiedTopology: true })
