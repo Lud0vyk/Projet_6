@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt');
 
 const User = require('../models/user');
 
+// pour s'enregistrer sur la bdd
 exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
       .then(hash => {
@@ -20,6 +21,7 @@ exports.signup = (req, res, next) => {
       .catch(error => res.status(500).json({ error }));
 };
 
+// pour se connecter
 exports.login = (req, res, next) => {
     User.findOne({ email: req.body.email })
       .then(user => {

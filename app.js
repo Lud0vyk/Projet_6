@@ -8,6 +8,8 @@ const path = require('path');
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 
+/* Utilisation du fichier .env pour stocker les données permettant de se connecter à la base de données
+qui ne seront pas envoyées sur github */
 require('dotenv').config();
 
 
