@@ -1,5 +1,6 @@
 // middleware/multer-config.js
 
+// Sert à gerer les fichiers photo
 const multer = require('multer');
 
 const MIME_TYPES = {

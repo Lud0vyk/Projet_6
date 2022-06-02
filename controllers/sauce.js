@@ -59,7 +59,29 @@ exports.getAllSauce = (req, res, next) => {
     .catch((error) => {res.status(400).json({error: error});});
 }
 
-// pour les likes
+/******************************************************************* */
 
+
+// pour les likes
+exports.likeFromUser = (req, res, next) => {
+
+  if (like === 1) {
+
+    Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
+  
+  
+    .then((sauces) => {res.status(200).json(sauces);})
+    .catch((error) => {res.status(400).json({error: error});});
+  }
+
+  if (like === 0) {
+
+    Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
+  
+  
+    .then((sauces) => {res.status(200).json(sauces);})
+    .catch((error) => {res.status(400).json({error: error});});
+  }
+}
 
 // pour les dislikes
