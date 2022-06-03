@@ -2,6 +2,7 @@
 
 const Sauce = require('../models/sauce');
 const fs = require('fs');
+const user = require('../models/user');
 
 // crétion d'une nouvelle sauce
 exports.createSauce = (req, res, next) => {
@@ -58,30 +59,3 @@ exports.getAllSauce = (req, res, next) => {
     .then((sauces) => {res.status(200).json(sauces);})
     .catch((error) => {res.status(400).json({error: error});});
 }
-
-/******************************************************************* */
-
-
-// pour les likes
-exports.likeFromUser = (req, res, next) => {
-
-  if (like === 1) {
-
-    Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
-  
-  
-    .then((sauces) => {res.status(200).json(sauces);})
-    .catch((error) => {res.status(400).json({error: error});});
-  }
-
-  if (like === 0) {
-
-    Sauce.updateOne({ _id: req.params.id }, { ...sauceObject, _id: req.params.id })
-  
-  
-    .then((sauces) => {res.status(200).json(sauces);})
-    .catch((error) => {res.status(400).json({error: error});});
-  }
-}
-
-// pour les dislikes

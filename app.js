@@ -3,6 +3,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+// pour la sécurité
+const helmet = require("helmet");
+
 
 const path = require('path');
 const sauceRoutes = require('./routes/sauce');
@@ -22,6 +25,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 const app = express();
+app.use(helmet());
 
 // cors
 app.use((req, res, next) => {
