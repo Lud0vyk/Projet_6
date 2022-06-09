@@ -25,7 +25,14 @@ mongoose.connect(`mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASS
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 const app = express();
-app.use(helmet());
+
+// Utilisation de helmet 
+/* Pour que les requêtes de n'importe quelle origine peuvent lire la ressource.
+L'en-tête de réponse HTTP Cross-Origin-Embedder-Policy, lorsqu'il est utilisé sur un document, 
+peut être utilisé pour exiger que les sous-ressources soient de la même origine que le document, 
+ou soient accompagnées d'un en-tête de réponse HTTP Cross-Origin-Resource-Policy pour indiquer 
+ils sont d'accord pour être intégrés. C'est pourquoi la valeur d'origine croisée existe. */
+app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}));
 
 // cors
 app.use((req, res, next) => {
