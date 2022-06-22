@@ -1,30 +1,23 @@
 cd backend
+créer un dossier images à la racine du dossier backend
+créer un dossier .env à la racine du dossier backend
+puis mettre les variables suivantes :
+DB_USERNAME="user44"
+DB_PASSWORD="44_2022"
+DB_NAME="piquante"
 
-git init                                     // puis un fichier .gitignore contenant node_modules
-npm init                                     // server.js
-npm install -g nodemon                       // server
-npm install express
-npm install mongoose                         // bdd
-npm install mongoose-unique-validator        // sécurité bdd
-npm install bcrypt                           // sécurité mdp
-npm install jsonwebtoken                     // sécurité session
-npm install multer                           // téléchargement de fichiers
-npm install --save dotenv                    // sécurisation de la bdd
-
-npm install helmet --save                    // pour la sécurité (pas encore installé le faire à la fin et supprimer ce com)
-
+npm install 
 
 démarage :
 
-TERMINAL 1 :
+TERMINAL 1 frontend :
 cd Web-Developer-P6-master
 ng serve
 
-TERMINAL 2 :
+TERMINAL 2 backend :
 cd backend
 nodemon server
 
-question :
-chiffrement de l'email ?
-mot de passe fort ?
+
+
 
